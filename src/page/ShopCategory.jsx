@@ -2,7 +2,7 @@
 
 const ShopCategory = () => {
   return (
-    <div>ShopCategory</div>
+    <div></div>
   )
 }
 
