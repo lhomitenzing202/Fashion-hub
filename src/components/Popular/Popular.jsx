@@ -1,7 +1,6 @@
 import './Popular.css'
 import data_product from '../Assets/data'
-// eslint-disable-next-line no-unused-vars
-import Item from '../Items/Item'
+
 
 
 const Popular = () => {

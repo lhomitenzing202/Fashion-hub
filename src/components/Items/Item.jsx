@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-
+import "../Assets/data"
 import './Item.css'
 
 const Item = (props) => {
