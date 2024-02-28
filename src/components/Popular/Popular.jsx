@@ -30,9 +30,9 @@ const Popular = () => {
       <h1>POPULAR IN WOMEN</h1>
       <hr/>
       <div className="popular-item">
-        {data_product.map((item, index) => (
+        {data_product.map((item, i) => (
           <Item
-            key={index}
+            key={i}
             itemName={item.name}
             newPrice={item.new_price}
             oldPrice={item.old_price}
