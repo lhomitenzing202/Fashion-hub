@@ -13,6 +13,7 @@ export const Newcollection = () => {
             {new_collections.map((item , i)=>{
                 return <Item
                 key={i}
+                id = {item.id}
                 itemName={item.name}
                 newPrice={item.new_price}
                 oldPrice={item.old_price}

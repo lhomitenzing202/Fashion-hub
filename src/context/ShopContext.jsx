@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import { createContext } from "react";
 import all_product from '../components/Assets/all_product'

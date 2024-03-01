@@ -33,6 +33,7 @@ const Popular = () => {
         {data_product.map((item, i) => (
           <Item
             key={i}
+            id={item.id}
             itemName={item.name}
             newPrice={item.new_price}
             oldPrice={item.old_price}
