@@ -42,6 +42,10 @@
     border: 1px solid#ebebeb;
 }
 
+.footer-icon-container #icon {
+    margin-right: 10px;
+}
+
 .footer-copyrights {
     display: flex;
     flex-direction: column;

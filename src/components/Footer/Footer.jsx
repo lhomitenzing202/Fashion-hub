@@ -17,7 +17,11 @@ const Footer = () => {
     <div className="social-icons">
         <div className="footer-icon-container">
             <img src="src\components\Assets\instagram_icon.png" alt="" />
+            </div>
+            <div className="footer-icon-container">
             <img src="src\components\Assets\whatsapp_icon.png" alt="" />
+            </div>
+            <div className="footer-icon-container">
             <img src="src\components\Assets\pintester_icon.png" alt="" />
             </div>
 
