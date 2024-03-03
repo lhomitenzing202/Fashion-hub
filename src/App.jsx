@@ -3,13 +3,14 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import ShopCategory from './page/ShopCategory'
 import Shop from './page/Shop'
-import { LoginSignup } from './page/LoginSignup'
 import { Product } from './page/Product'
 import Cart from './page/Cart'
 import Footer from './components/Footer/Footer'
 import men_banner from './components/Assets/banner_mens.png'
 import women_banner from './components/Assets/banner_women.png'
 import kid_banner from './components/Assets/banner_kids.png'
+import LoginSignup from './page/LoginSignup'
+
 
 function App() {
 

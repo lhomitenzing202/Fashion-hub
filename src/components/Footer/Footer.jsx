@@ -26,6 +26,7 @@ const Footer = () => {
             </div>
 
     </div>
+
     <div className="footer-copyrights">
         <hr />
         <p>Copyrights @ 2024 - All Rights Reserved By Fashion-Hub. </p>
