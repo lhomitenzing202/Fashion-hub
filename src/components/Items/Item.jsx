@@ -27,11 +27,14 @@
 
 import PropTypes from 'prop-types'; // Import PropTypes
 import './Item.css';
+import { Link } from 'react-router-dom';
+
 
 const Item = (props) => {
   return (
     <div className="item">
-      <img src={props.imageUrl} alt="Image" />
+      <Link to ={`/product/${props.id}`}>
+        <img src={props.imageUrl} alt="Image" /></Link>
       <p>{props.itemName}</p>
 
       <div className="item-prices">
@@ -48,6 +51,7 @@ const Item = (props) => {
 
 Item.propTypes = {
   imageUrl: PropTypes.string, 
+  id: PropTypes.string,
   itemName: PropTypes.string, 
   newPrice: PropTypes.number, 
   oldPrice: PropTypes.number, 
