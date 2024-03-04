@@ -34,10 +34,10 @@ const Popular = () => {
           <Item
             key={i}
             id={item.id}
-            itemName={item.name}
-            newPrice={item.new_price}
-            oldPrice={item.old_price}
-            imageUrl={item.image}
+            name={item.name}
+            new_price={item.new_price}
+            old_price={item.old_price}
+            image={item.image}
           />
         ))}
       </div>
