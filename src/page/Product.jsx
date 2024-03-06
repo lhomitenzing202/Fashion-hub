@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { ShopContext } from "../context/ShopContext"
 import { useParams } from "react-router-dom";
 import Breadcrum from "../components/Breadcrums/Breadcrum";
-// import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
+import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
 
 
  const Product = () => {
@@ -12,7 +12,7 @@ import Breadcrum from "../components/Breadcrums/Breadcrum";
   return (
     <div>
       <Breadcrum product={product}/>
-      {/* <ProductDisplay product = {product}/> */}
+      <ProductDisplay product = {product}/>
     </div>
   )
 }
