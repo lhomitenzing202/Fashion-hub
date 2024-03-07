@@ -10,7 +10,7 @@ const Navbar = ()=> {
       <div className="navbar">
 
         <div className="nav-logo">
-          <img src="src\components\Assets\logo.png" alt="" />
+          <img src="src/components/Assets/fashionhub4.PNG" alt="" />
           <p>Fashion-Hub</p>
         </div>
         <ul className="nav-menu">

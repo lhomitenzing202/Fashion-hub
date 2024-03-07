@@ -17,6 +17,11 @@
     font-weight: 600;
 }
 
+.nav-logo img {
+    height: 100px;
+    width: 150px;
+}
+
 .nav-menu {
     display: flex;
     align-items: center;

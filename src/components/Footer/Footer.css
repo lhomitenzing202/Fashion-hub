@@ -18,6 +18,12 @@
     font-weight: 700;
 }
 
+.footer-logo img {
+    margin-top: 20px;
+    height: 80px;
+    width: 150px;
+}
+
 .footer-links {
     display: flex;
     list-style: none;

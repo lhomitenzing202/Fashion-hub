@@ -4,7 +4,7 @@ const Footer = () => {
   return (
    <div className="footer">
     <div className="footer-logo">
-        <img src="src\components\Assets\logo_big.png" alt="" />
+        <img src="src\components\Assets\fashionhub4.PNG" alt="" />
         <p>Fashion-Hub</p>
     </div>
     <ul className='footer-links'>
