@@ -7,6 +7,7 @@ const Footer = () => {
         <img src="src\components\Assets\fashionhub4.PNG" alt="" />
         <p>Fashion-Hub</p>
     </div>
+    
     <ul className='footer-links'>
         <li>Company</li>
         <li>Products</li>

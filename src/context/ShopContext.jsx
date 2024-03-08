@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-
+import PropTypes from 'prop-types';
 import { createContext } from "react";
 import all_product from '../components/Assets/all_product'
 
@@ -10,8 +9,13 @@ const ShopContextProvider = (props)=>{
 
 return(
     <ShopContext.Provider value = {contextValue}>
-        {props.children}        
+        {props.children}
     </ShopContext.Provider>
 )
 }
+
+ShopContextProvider.propTypes = {
+    children: PropTypes.node.isRequired
+};
+
  export default ShopContextProvider;
