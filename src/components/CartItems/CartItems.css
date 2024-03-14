@@ -54,8 +54,6 @@
     gap: 40px;
 }
 
-.cartitems-total h1 {}
-
 .cartitems-total-item {
     display: flex;
     justify-content: space-between;
