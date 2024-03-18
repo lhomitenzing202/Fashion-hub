@@ -18,29 +18,11 @@ const CartItems = () => {
         <p>Remove</p>
     </div>
     <hr />
-    {/* {all_product.map((e) => {
-    if (cartItems[e.id] > 0) 
-        return (
-    <div>
-            <div key={e.id} className="cartitems-format cartitems-format-main">
-                <img src={e.image} alt="" className='carticon-product-icon'/>
-                <p>{e.name}</p>
-                <p>Nrs. {e.new_price}</p>
-                <button className='cartitems-quantity'>{cartItems[e.id]}</button>
-                <p>Nrs. {e.new_price * cartItems[e.id]}</p>
-                <img className='cart-items-remove-icon' src={remove_icon} onClick={() => { removeFromCart(e.id) }} alt="" />
-                 </div>
-                 <hr/>
-            </div>
-        ); 
-        return null;       
-})}   */}
-
 {all_product.map((e) => {
     if (cartItems[e.id] > 0) 
         return (
-            <div key={e.id}>
-                <div className="cartitems-format cartitems-format-main">
+            <div>
+                <div className="cartitems-format cartitems-format-main" key={e.id}>
                     <img src={e.image} alt="" className='carticon-product-icon'/>
                     <p>{e.name}</p>
                     <p>Nrs. {e.new_price}</p>
@@ -53,25 +35,6 @@ const CartItems = () => {
         ); 
     return null;       
 })}
-
-{/* {all_product.map((item) => {
-    if (cartItems[item.id] > 0) 
-        return  (<div> 
-            <div key={item.id} className="cartitems-format cartitems-format-main">
-                <img src={item.image} alt="" className='carticon-product-icon'/>
-                <p>{item.name}</p>
-                <p>Nrs. {item.new_price}</p>
-                <button className='cartitems-quantity'>{cartItems[item.id]}</button>
-                <p>Nrs. {item.new_price * cartItems[item.id]}</p>
-                <img className='cart-items-remove-icon' src={remove_icon} onClick={() => { removeFromCart(item.id) }} alt="" />
-              </div>
-              <hr/>
-            </div>
-        ); 
-    return null;       
-})} */}
-
-
 
 <div className="cart-items-down">
     <div className="cartitems-total">
