@@ -18,7 +18,7 @@ const CartItems = () => {
         <p>Remove</p>
     </div>
     <hr />
-{all_product.map((e) => {
+{/* {all_product.map((e) => {
     if (cartItems[e.id] > 0) 
         return (
             <div>
@@ -34,7 +34,25 @@ const CartItems = () => {
             </div>
         ); 
     return null;       
+})} */}
+{all_product.map((e) => {
+    if (cartItems[e.id] > 0) 
+        return (
+            <div key={e.id}>
+                <div className="cartitems-format cartitems-format-main">
+                    <img src={e.image} alt="" className='carticon-product-icon'/>
+                    <p>{e.name}</p>
+                    <p>Nrs. {e.new_price}</p>
+                    <button className='cartitems-quantity'>{cartItems[e.id]}</button>
+                    <p>Nrs. {e.new_price * cartItems[e.id]}</p>
+                    <img className='cart-items-remove-icon' src={remove_icon} onClick={() => { removeFromCart(e.id) }} alt="" />
+                </div>
+                <hr/>
+            </div>
+        ); 
+    return null;       
 })}
+
 
 <div className="cart-items-down">
     <div className="cartitems-total">
@@ -60,8 +78,8 @@ const CartItems = () => {
     </div>
     <div className="cartitems-promocode">
         <p>Enter your promo code</p>
-        <div className="cartitem-promobox">
-            <input type="text" placeholder='promo code' />
+        <div className="cartitems-promobox">
+            <input type="text" id='username' placeholder='promo code' />
             <button>Submit</button>
         </div>
     </div>

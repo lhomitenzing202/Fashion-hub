@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
 import ShopCategory from './page/ShopCategory'
 import Shop from './page/Shop'
 import Cart from './page/Cart'
@@ -10,6 +9,8 @@ import women_banner from './components/Assets/banner_women.png'
 import kid_banner from './components/Assets/banner_kids.png'
 import LoginSignup from './page/LoginSignup'
 import Product from './page/Product'
+import './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar'
 
 
 function App() {
@@ -19,7 +20,6 @@ function App() {
     <div>
     <BrowserRouter>
     <Navbar/>
-
     <Routes>
       <Route path='/' element={<Shop/>}/>
       <Route path='/mens' element={<ShopCategory banner={men_banner} category="men"/>}/>
