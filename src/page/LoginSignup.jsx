@@ -1,4 +1,4 @@
-import '../page/css/Loginsignup.css'
+import './css/Loginsignup.css'
 
 const LoginSignup = () => {
   return (
