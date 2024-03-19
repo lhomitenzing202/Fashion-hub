@@ -1,5 +1,5 @@
 import './Footer.css'
-import footer_icon from '../Assets/fashionhub4.PNG'
+import footer_icon from '../Assets/fashionhub4.png'
 
 const Footer = () => {
   return (

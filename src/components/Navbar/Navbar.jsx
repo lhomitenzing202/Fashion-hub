@@ -49,7 +49,7 @@ import "./Navbar.css"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ShopContext } from '../../context/ShopContext';
-import logo from '../Assets/fashionhub4.PNG'
+import logo from '../Assets/fashionhub4.png'
 import cart_icon from '../Assets/cart_icon.png'
 
 const Navbar = () => {
