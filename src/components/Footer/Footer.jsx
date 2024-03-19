@@ -9,7 +9,7 @@ const Footer = () => {
     </div>
     
     <ul className='footer-links'>
-        <li>Company</li>
+        <li>Home</li>
         <li>Products</li>
         <li>About</li>
         <li>Contact</li>
