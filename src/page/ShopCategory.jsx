@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useContext } from 'react'
-import './css/ShopCategory.css'
+import './ShopCategory.css'
 import { ShopContext } from '../context/ShopContext'
 import Item from '../components/Items/Item'
 
