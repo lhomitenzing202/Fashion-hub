@@ -1,10 +1,11 @@
 import './Footer.css'
+import footer_icon from '../Assets/fashionhub4.PNG'
 
 const Footer = () => {
   return (
    <div className="footer">
     <div className="footer-logo">
-        <img src="src\components\Assets\fashionhub4.PNG" alt="" />
+        <img src={footer_icon} alt="" />
         <p>Fashion-Hub</p>
     </div>
     
