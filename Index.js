@@ -121,6 +121,100 @@ app.get('/allProducts', async(req, res) => {
     res.send(products);
 })
 
+//schema for creating user model
+const Users = mongoose.model('Users', {
+    name: {
+        type: String,
+    },
+    email: {
+        type: String,
+        unique: true,
+    },
+    password: {
+        type: String,
+    },
+    cartData: {
+        type: Object,
+    },
+    date: {
+        type: Date,
+        default: Date.now,
+    }
+})
+
+//creating end point for registering user 
+app.post('/signup', async(req, res) => {
+
+    let check = await Users.findOne({ email: req.body.email });
+    if (check) {
+        return res.status(400).json({ success: false, error: "User email already in use." })
+    }
+    let cart = {};
+    for (let i = 0; i < 300; i++) {
+        cart[i] = 0;
+    }
+    const user = new Users({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        cartData: cart,
+    })
+    await user.save();
+    //creating token
+    const data = {
+            user: {
+                id: user.id
+            }
+        }
+        //generating token
+    const token = jwt.sign(data, '@fashion-hub');
+    res.json({ success: true, token });
+})
+
+//creating endpoint for user login
+app.post('/login', async(req, res) => {
+
+    let user = await Users.findOne({ email: req.body.email });
+    if (user) {
+        const passCompare = req.body.password === user.password;
+        if (passCompare) {
+            const data = {
+                user: {
+                    id: user.id
+                }
+            }
+            const token = jwt.sign(data, '@fashion-hub');
+            res.json({ success: true, token });
+        } else {
+            res.json({ success: false, error: 'Wrong Password' });
+        }
+    } else {
+        res.json({ success: false, error: 'Wrong email id' })
+    }
+})
+
+// end ponit for new collection
+app.get('/newcollection', async(req, res) => {
+    let products = await Product.find({});
+    let newcollection = products.slice(1).slice(-8);
+    console.log("New Collection fetched");
+    res.send(newcollection);
+})
+
+// app.get('/newcollection', async(req, res) => {
+//     let products = await Product.find({}).sort({ updatedAt: -1 }).limit(8);
+//     console.log("New Collection fetched");
+//     res.send(products);
+// });
+
+//creating endpoint for popular among women
+app.get('/popularamongwomen', async(req, res) => {
+    let products = await Product.find({ category: "women" });
+    let popularamongwomen = products.slice(0, 4);
+    console.log("Popular among women fetched");
+    res.send(popularamongwomen);
+})
+
 app.listen(port, (error) => {
     if (!error) {
         console.log("server is running on port " + port)
