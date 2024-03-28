@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import { createContext, useState } from "react";
-import all_product from '../components/Assets/all_product'
+import { createContext, useEffect, useState } from "react";
 
 
 export  const ShopContext = createContext(null);
 
  const getDefaultCart = ()=>{
         let cart = {};
-        for(let index = 0; index < all_product.length+1; index++){
+        for(let index = 0; index < 300+1; index++){
             cart[index]= 0 ;
         }
     return cart;
@@ -15,8 +14,14 @@ export  const ShopContext = createContext(null);
 
 const ShopContextProvider = (props)=>{
 
+    const[all_product,setAll_Product] = useState([]);
     const[cartItems, setCartItems]= useState(getDefaultCart());
-    
+
+    useEffect(()=>{
+         fetch('http://localhost:4000/allProducts')
+         .then((response)=>response.json())
+         .then((data)=>setAll_Product(data))
+    },[])
     
     const addToCart=(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
