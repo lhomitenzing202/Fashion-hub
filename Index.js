@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const { error } = require("console");
 
 app.use(express.json());
 app.use(cors());
@@ -213,6 +214,78 @@ app.get('/popularamongwomen', async(req, res) => {
     let popularamongwomen = products.slice(0, 4);
     console.log("Popular among women fetched");
     res.send(popularamongwomen);
+})
+
+//creating middleware to fetch user
+const fetchUser = async(req, res, next) => {
+        const token = req.header('auth-token');
+        if (!token) {
+            res.status(401).send({ error: "Please authenticate using valid token" })
+        } else {
+            try {
+                const data = jwt.verify(token, '@fashion-hub');
+                req.user = data.user;
+                next();
+            } catch (error) {
+                res.status(401).send({ errors: "Please authenticate using valid token" })
+            }
+        }
+    }
+    //  creating endpoint for add product in cartdata
+app.post('/addtocart', fetchUser, async(req, res) => {
+    console.log("Added Successfully", req.body.itemId);
+    let userData = await Users.findOne({ _id: req.user.id });
+    userData.cartData[req.body.itemId] += 1;
+    await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+    res.json("Added Successfully")
+})
+
+// app.post('/addtocart', fetchUser, async(req, res) => {
+//     try {
+//         let userData = await Users.findOne({ _id: req.user.id });
+//         userData.cartData[req.body.itemId] += 1;
+//         await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+//         res.json({ success: true, message: "Item added to cart successfully" });
+//     } catch (error) {
+//         console.error("Error adding item to cart:", error);
+//         res.status(500).json({ success: false, error: "Failed to add item to cart" });
+//     }
+// })
+
+//creating endpoint for removing product in cart data
+// app.post('/removefromcart', fetchUser, async(req, res) => {
+//     console.log("Removed Successfully", req.body.itemId);
+//     let userData = await Users.findOne({ _id: req.user.id });
+//     if (userData.cartData[req.body.itemId] > 0)
+//         userData.cartData[req.body.itemId] -= 1;
+//     await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+//     res.send("Removed Successfully")
+// })
+
+app.post('/removefromcart', fetchUser, async(req, res) => {
+    try {
+        console.log("Removed Successfully", req.body.itemId);
+        let userData = await Users.findOne({ _id: req.user.id });
+        if (userData.cartData[req.body.itemId] > 0)
+            userData.cartData[req.body.itemId] -= 1;
+        await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+        res.json({ success: true, message: "Item removed from cart successfully" });
+    } catch (error) {
+        console.error("Error removing item from cart:", error);
+        res.status(500).json({ success: false, error: "Failed to remove item from cart" });
+    }
+})
+
+//creating endpoint to get cartdata
+// app.post('/getcart', fetchUser, async(req, res) => {
+//     console.log("GetCart");
+//     let userData = await Users.findOne({ _id: req.user.id });
+//     res.json(userData.cartData)
+// })
+app.post('/getcart', fetchUser, async(req, res) => {
+    console.log("GetCart");
+    let userData = await Users.findOne({ _id: req.user.id });
+    res.json(userData.cartData);
 })
 
 app.listen(port, (error) => {
