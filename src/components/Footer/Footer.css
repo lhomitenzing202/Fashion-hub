@@ -1,105 +1,104 @@
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-logo P {
-    color: #383838;
-    font-size: 48px;
-    font-weight: 700;
-}
-
-.footer-logo img {
-    margin-top: 20px;
-    height: 80px;
-    width: 150px;
-}
-
-.footer-links {
-    display: flex;
-    list-style: none;
-    gap: 50px;
-    color: #252525;
-    font-size: 20px;
-}
-
-.footer-links li {
-    cursor: pointer;
-}
-
-.social-icons {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-icon-container {
-    padding: 10px;
-    padding-bottom: 6px;
-    background: #fbfbfb;
-    border: 1px solid#ebebeb;
-}
-
-.footer-icon-container #icon {
-    margin-right: 10px;
-}
-
-.footer-copyrights {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
-    margin-bottom: 10px;
-    color: #1a1a1a;
-    font-size: 20px;
-}
-
-.footer-copyrights hr {
-    width: 80%;
-    border: none;
-    border-radius: 10px;
-    height: 3px;
-    background: #c7c7c7;
-}
-
-@media (max-width: 800px) {
-    .footer-logo img {
-        height: 50px;
-        width: 70px;
-    }
-    .footer {
-        gap: 20px;
-    }
-    .footer-logo {
-        gap: 10px;
-        align-items: end;
-    }
-    .footer-logo p {
-        font-size: 25px;
-    }
-    .footer-links {
-        font-size: 14px;
-        gap: 10px;
-    }
-    footer-social-icon img {
-        width: 22px;
-    }
-    .footer-copyright p {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 500px) {
-    .footer-copyrights p {
-        font-size: 10px;
-    }
-}
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-logo P {
+            color: #383838;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        .footer-logo img {
+            width: 160px;
+            margin-right: -55px;
+        }
+        
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            color: #252525;
+            font-size: 20px;
+        }
+        
+        .footer-links li {
+            cursor: pointer;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-icon-container {
+            padding: 10px;
+            padding-bottom: 6px;
+            background: #fbfbfb;
+            border: 1px solid#ebebeb;
+        }
+        
+        .footer-icon-container #icon {
+            margin-right: 10px;
+        }
+        
+        .footer-copyrights {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-size: 20px;
+        }
+        
+        .footer-copyrights hr {
+            width: 80%;
+            border: none;
+            border-radius: 10px;
+            height: 3px;
+            background: #c7c7c7;
+        }
+        
+        @media (max-width: 800px) {
+            .footer {
+                gap: 20px;
+            }
+            .footer-logo {
+                gap: 10px;
+                align-items: center;
+            }
+            .footer-logo p {
+                font-size: 25px;
+            }
+            .footer-logo img {
+                margin-right: -35px;
+                margin-bottom: 5px;
+            }
+            .footer-links {
+                font-size: 14px;
+                gap: 10px;
+            }
+            footer-social-icon img {
+                width: 22px;
+            }
+            .footer-copyright p {
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .footer-copyrights p {
+                font-size: 10px;
+            }
+        }

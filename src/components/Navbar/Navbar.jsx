@@ -49,8 +49,9 @@ import "./Navbar.css"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ShopContext } from '../../context/ShopContext';
-import logo from '../Assets/fashionhub4.png'
-import cart_icon from '../Assets/cart_icon.png'
+import logo from '../Assets/logo.png';
+import cart_icon from '../Assets/cart_icon.png';
+import navdropdown from '../Assets/navdropdown.png';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
@@ -69,7 +70,7 @@ const Navbar = () => {
         <p>FashionHub</p>
       </div>
 
-      <img className="nav-dropdown" onClick={dropDown_toggle} src="src\components\Assets\navdropdown.png" alt="" />
+      <img className="nav-dropdown" onClick={dropDown_toggle} src={navdropdown}alt="" />
       <ul ref={menuRef} className="nav-menu">
         <li onClick={() => { setMenu("shop") }}><Link style={{ textDecoration: 'none' }} to='/'>Shop</Link>{menu === "shop" ? <hr /> : <></>}</li>
         <li onClick={() => { setMenu("mens") }}><Link style={{ textDecoration: 'none' }} to='/mens'>Men</Link>{menu === "mens" ? <hr /> : <></>}</li>

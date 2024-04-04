@@ -1,17 +1,19 @@
 import './Footer.css'
-import footer_icon from '../Assets/fashionhub4.png'
+import footer_icon from '../Assets/logo.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
    <div className="footer">
     <div className="footer-logo">
         <img src={footer_icon} alt="" />
-        <p>Fashion-Hub</p>
+        <p>FashionHub</p>
     </div>
     
     <ul className='footer-links'>
-        <li>Home</li>
-        <li>Products</li>
+        
+        <li><Link style={{ textDecoration: 'none' }} to='/'>Home</Link></li>
+        <li><Link style={{ textDecoration: 'none' }} to='/'>Latest Product</Link></li>
         <li>About</li>
         <li>Contact</li>
     </ul>
